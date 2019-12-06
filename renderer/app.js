@@ -19,6 +19,13 @@ search.addEventListener('keyup', (e) => {
   });
 });
 
+// navigate item selection with up/down arrows
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+    items.changeSelection(e.key);
+  }
+});
+
 // toogle modal buttons
 const toggleModalButtons = () => {
   // check state
