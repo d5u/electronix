@@ -1,13 +1,13 @@
 const { ipcRenderer } = require('electron');
-const items = require('../items');
+const items = require('./items');
 
 // dom nodes
-let showModal = document.getElementById('show-modal');
-let closeModal = document.getElementById('close-modal');
-let modal = document.getElementById('modal');
-let addItem = document.getElementById('add-item');
-let itemUrl = document.getElementById('url');
-let search = document.getElementById('search');
+const showModal = document.getElementById('show-modal');
+const closeModal = document.getElementById('close-modal');
+const modal = document.getElementById('modal');
+const addItem = document.getElementById('add-item');
+const itemUrl = document.getElementById('url');
+const search = document.getElementById('search');
 
 // filter items with "search"
 search.addEventListener('keyup', (e) => {
@@ -78,6 +78,6 @@ ipcRenderer.on('new-item-success', (e, newItem) => {
 });
 
 // listen for keyboard submit
-itemUrl.addEventListener('keyup', e => {
+itemUrl.addEventListener('keyup', (e) => {
   if (e.key === 'Enter') addItem.click();
-})
+});
